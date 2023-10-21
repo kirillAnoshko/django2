@@ -1,0 +1,14 @@
+{% extends "app/base.html" %}
+
+{% block title %}
+   Привет!
+{% endblock %}
+
+{% block body %}
+<form action="{% url 'app:add' %}" method="POST">
+   {% csrf_token %}
+   {{ form_fields.as_p }}
+   <input type="submit">
+</form>
+<a href="{% url 'app:index' %}">на главную страницу</a>
+{% endblock %}

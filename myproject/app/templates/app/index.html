@@ -1,0 +1,14 @@
+{% extends "app/base.html" %}
+
+{% block title %}
+    Запросы
+{% endblock %}
+
+{% block body %}
+<ol>
+    {% for user in users %}
+    <li>{{ user }}</li>
+    {% endfor %}
+</ol>
+<a href="{% url 'app:add' %}">добавить пользователя</a>
+{% endblock %}
